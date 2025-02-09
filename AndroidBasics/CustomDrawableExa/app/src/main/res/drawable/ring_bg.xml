@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+       <item>
+           <shape android:shape="oval">
+               <solid android:color="#DB1111"/>
+           </shape>
+       </item>
+
+    <item
+        android:left="2dp"
+        android:right="2dp"
+        android:bottom="2dp"
+        android:top="2dp">
+        <shape android:shape="oval">
+            <solid android:color="#E4EDE3"/>
+        </shape>
+    </item>
+
+    <item>
+
+        <vector xmlns:android="http://schemas.android.com/apk/res/android"
+            android:autoMirrored="true"
+            android:height="34dp"
+            android:tint="#000000"
+            android:viewportHeight="34"
+            android:viewportWidth="34"
+            android:width="34dp">
+
+            <path android:fillColor="@android:color/white"
+                android:pathData="M14,4l2.29,2.29 -2.88,2.88 1.42,1.42 2.88,-2.88L20,10L20,4zM10,4L4,4v6l2.29,-2.29 4.71,4.7L11,20h2v-8.41l-5.29,-5.3z"/>
+
+        </vector>
+
+    </item>
+</layer-list>

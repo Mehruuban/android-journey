@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:background="@color/design_default_color_secondary"
+    android:paddingRight="21dp"
+    android:paddingBottom="11dp"
+    android:paddingLeft="21dp"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:text="@string/add_contact"
+        android:id="@+id/txtTitle"
+        android:layout_marginBottom="15dp"
+        android:inputType="text"
+        tools:ignore="TextViewEdits" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_name"
+        android:background="#fff"
+        android:id="@+id/edtName"
+        android:padding="11dp"
+        android:layout_marginBottom="21dp"
+        android:inputType="text"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_number"
+        android:background="#fff"
+        android:id="@+id/edtNumber"
+        android:padding="11dp"
+        android:layout_marginBottom="11dp"
+        android:inputType="text"
+        tools:ignore="TextFields" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:id="@+id/btnAction"
+        android:layout_marginTop="11dp"
+        android:textColor="@color/design_default_color_secondary"
+        android:layout_gravity="end"/>
+
+
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageView"
+        android:layout_marginStart="12dp"
+        android:layout_centerVertical="true"
+        android:src="@color/design_default_color_secondary"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameView"
+        android:text="@string/name"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/imageView"
+        android:textColor="@color/black"/>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gmailView"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:text="@string/mehru_gmal_com"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_below="@id/nameView"
+        android:textColor="@color/black"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@id/imageView"/>
+
+
+</RelativeLayout>

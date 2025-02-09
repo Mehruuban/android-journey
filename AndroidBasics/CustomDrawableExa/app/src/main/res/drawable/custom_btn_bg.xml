@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+
+            //Solid is used to give color n an element
+            <solid android:color="#DE08F2"/>
+<!--            <stroke android:color="#E93636"-->
+<!--                android:dashGap="2dp"-->
+<!--                android:width="54dp"-->
+<!--                android:dashWidth="5dp"/>-->
+<!--            <corners android:bottomLeftRadius="21dp"-->
+<!--                android:topRightRadius="21dp"/>-->
+               //Padding used to give padding an element
+<!--            <padding android:bottom="25dp"-->
+<!--                android:left="20dp"-->
+<!--                android:right="15dp"-->
+<!--                android:top="10dp"/>-->
+            //Size using to identify the  size of an element
+<!--            <size android:width="250dp"-->
+<!--                android:height="250dp"/>-->
+
+            //Gradient ids the combination of more than two colors
+            <gradient android:startColor="#1488F4"
+                android:endColor="#D02C64"
+                android:angle="360"
+                android:type="radial"
+                android:gradientRadius="300dp"/>
+
+        </shape>
+    </item>
+
+
+</selector>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ImplicitIntentExa</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Open_Drawer">Open navigation</string>
+    <string name="Close_Drawer">Close navigation</string>
+</resources>
