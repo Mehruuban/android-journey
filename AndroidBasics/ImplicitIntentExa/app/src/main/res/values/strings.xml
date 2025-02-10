@@ -4,4 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Open_Drawer">Open navigation</string>
     <string name="Close_Drawer">Close navigation</string>
+    <string name="title_activity_google_map">GoogleMapAct</string>
 </resources>
