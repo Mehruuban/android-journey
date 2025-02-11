@@ -29,10 +29,6 @@
             android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".GoogleMapAct"
-            android:exported="false"
-            android:label="@string/title_activity_google_map" />
-        <activity
             android:name=".NavigationDrawer"
             android:exported="true">
             <intent-filter>

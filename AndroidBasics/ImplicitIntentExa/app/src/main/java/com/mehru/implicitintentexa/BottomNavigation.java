@@ -53,6 +53,7 @@ public class BottomNavigation extends AppCompatActivity {
                 return true;
             }
         });
+        //used to open the user selected items 
         bnView.setSelectedItemId(R.id.nav_profile);
     }
     public void loadFlg(Fragment fragment,boolean mehru){
