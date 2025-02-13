@@ -37,6 +37,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(),LoginActi.class);
                 startActivity(intent);
+                finishAffinity();
 
 
             }
