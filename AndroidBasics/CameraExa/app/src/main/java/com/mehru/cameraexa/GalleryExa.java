@@ -16,7 +16,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class GalleryExa extends AppCompatActivity {
+public class GalleryExa extends AppCompatActivity  {
     private final int GALLERY_REQ_CODE = 102 ;
 
      Button btnGallery;
