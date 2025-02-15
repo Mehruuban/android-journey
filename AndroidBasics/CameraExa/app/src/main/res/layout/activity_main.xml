@@ -11,19 +11,20 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="450dp"
+        android:layout_height="450dp"
         android:id="@+id/btnCamera"
         android:scaleType="fitCenter"
         android:contentDescription="TODO" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/btnImage"
-        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
         android:layout_marginTop="12dp"
-        android:text="Select Image"/>
+        android:background="#E28B0B"
+        android:text="Select Image"
+        android:textStyle="bold" />
 
 
 
