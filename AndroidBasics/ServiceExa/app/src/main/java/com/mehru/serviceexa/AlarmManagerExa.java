@@ -49,9 +49,9 @@ public class AlarmManagerExa extends AppCompatActivity {
                 long time = 1000;
                 long triggerTime = System.currentTimeMillis()+(time*1000);
 
-                Intent brodcast = new Intent(AlarmManagerExa.this,MyReciever.class);
+                Intent broadcast = new Intent(AlarmManagerExa.this,MyReciever.class);
 
-                PendingIntent pi = PendingIntent.getBroadcast(AlarmManagerExa.this,alarm_req_code ,brodcast,PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent pi = PendingIntent.getBroadcast(AlarmManagerExa.this,alarm_req_code ,broadcast,PendingIntent.FLAG_UPDATE_CURRENT);
 
                 alarmManager.set(AlarmManager.RTC_WAKEUP,triggerTime,pi);
 
