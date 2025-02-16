@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ServiceExa"
         tools:targetApi="31">
         <activity
+            android:name=".AlarmManagerExa"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -22,7 +25,8 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".MusicService"/>
+        <service android:name=".MusicService" />
+        <receiver android:name=".MyReciever"/>
     </application>
 
 </manifest>
