@@ -1,6 +1,7 @@
 package com.mehru.acceleromtrsenexa;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -18,43 +19,41 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class ProximitySensorExa extends AppCompatActivity implements SensorEventListener {
+import java.util.LinkedHashMap;
 
-    TextView proxy ;
+public class LightSensorExa extends AppCompatActivity implements SensorEventListener {
+       TextView Light;
+
+
+
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_proximity_sensor_exa);
-        proxy=findViewById(R.id.proxy);
+        setContentView(R.layout.activity_light_sensor_exa);
+
+        Light = findViewById(R.id.Light);
 
 
-
-
-        SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        SensorManager sensorManager =(SensorManager) getSystemService(SENSOR_SERVICE);
         if (sensorManager!= null){
-            Sensor proxySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+            Sensor lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
-            if (proxySensor!=null){
-                sensorManager.registerListener(this,proxySensor,SensorManager.SENSOR_DELAY_NORMAL);
+            if (lightSensor!= null){
+                sensorManager.registerListener(this,lightSensor,SensorManager.SENSOR_DELAY_NORMAL);
+            }else {
+                Toast.makeText(this, "Sensor is not detected", Toast.LENGTH_SHORT).show();
             }
 
         }
-
     }
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-
-        if (sensorEvent.sensor.getType()==Sensor.TYPE_PROXIMITY){
-            proxy.setText("Values"+ sensorEvent.values[0]);
-            if (sensorEvent.values[0]>0){
-                Toast.makeText(this, "Object Is far", Toast.LENGTH_SHORT).show();
-            }else {
-                Toast.makeText(this, "Object Is near", Toast.LENGTH_SHORT).show();
-            }
+        if (sensorEvent.sensor.getType()==Sensor.TYPE_LIGHT){
+            Light.setText("Values: "+ sensorEvent.values[0]);
         }
 
     }
@@ -63,4 +62,6 @@ public class ProximitySensorExa extends AppCompatActivity implements SensorEvent
     public void onAccuracyChanged(Sensor sensor, int i) {
 
     }
+
+
 }
