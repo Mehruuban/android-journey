@@ -46,8 +46,8 @@ public class AlarmManagerExa extends AppCompatActivity {
 
                 int Alarm =Integer.parseInt (((EditText)(findViewById(R.id.Alarm))).getText().toString());
 
-                long time = 1000;
-                long triggerTime = System.currentTimeMillis()+(time*1000);
+                long time = 100;
+                long triggerTime = System.currentTimeMillis()+(time*100);
 
                 Intent broadcast = new Intent(AlarmManagerExa.this,MyReciever.class);
 
