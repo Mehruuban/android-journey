@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         String aPath = "android.resource://" + getPackageName()+"/raw/nat_1";
 
+        //String onlinePath = "https://www.youtube.com/watch?v=YDraUaHz55o&list=PLjVLYmrlmjGdDps6HAwOOVoAtBPAgIOXL&index=97";
+
         Uri audioURI = Uri.parse(aPath);
         try {
             mediaPlayer.setDataSource(this,audioURI);
