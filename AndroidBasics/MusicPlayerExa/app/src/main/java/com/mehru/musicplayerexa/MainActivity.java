@@ -73,5 +73,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //mediaPlayer.seekTo();
+        //mediaPlayer.getDuration();
+        //mediaPlayer.getCurrentPosition();
+
     }
 }
