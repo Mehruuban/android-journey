@@ -18,17 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     String Api = "56bf92b9be644779ac46bea67e389104";
-
-
-
-
-
-
-
-
-
-
-
+    String a = "56bf92b9be644779ac46bea67e389104";
 
 
     TabLayout tabLayout;
