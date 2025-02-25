@@ -9,16 +9,20 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
 
-    String Api = "56bf92b9be644779ac46bea67e389104";
-    String a = "56bf92b9be644779ac46bea67e389104";
+
+    String api = "56bf92b9be644779ac46bea67e389104";
 
 
     TabLayout tabLayout;

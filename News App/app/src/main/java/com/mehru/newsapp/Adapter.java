@@ -71,7 +71,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             mCategory = itemView.findViewById(R.id.content);
             mAuthor = itemView.findViewById(R.id.authr);
             mTime =itemView.findViewById(R.id.time);
-
             imageView =itemView.findViewById(R.id.imageView);
             cardView = itemView.findViewById(R.id.cardView);
 

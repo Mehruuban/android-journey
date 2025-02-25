@@ -26,16 +26,17 @@ import retrofit2.Response;
 
 public class ScienceFragment extends Fragment {
 
-    String Api = "56bf92b9be644779ac46bea67e389104";
+    String api = "56bf92b9be644779ac46bea67e389104";
     ArrayList<ModelClass> modelClassArrayList;
     Adapter adapter ;
     String country  ="in";
+    String category = "category";
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        @SuppressLint("InflateParams") View v = inflater.inflate(R.layout.science_fragment,null);
+        View v = inflater.inflate(R.layout.science_fragment,null);
 
         RecyclerView recyclerViewScience = v.findViewById(R.id.recyclerviewScience);
         modelClassArrayList = new ArrayList<>();
@@ -49,11 +50,10 @@ public class ScienceFragment extends Fragment {
 
     }
     private void findNews() {
-        String category = "science";
-        ApiUtilities.getApiInterface().getCategoryNews(country, category,100,Api).enqueue(new Callback<MainNews>() {
-            @SuppressLint("NotifyDataSetChanged")
+
+        ApiUtilities.getApiInterface().getCategoryNews(country, category,100,api).enqueue(new Callback<MainNews>() {
             @Override
-            public void onResponse(@NonNull Call<MainNews> call, @NonNull Response<MainNews> response) {
+            public void onResponse( Call<MainNews> call,  Response<MainNews> response) {
                 if (response.isSuccessful()){
                     assert response.body() != null;
                     modelClassArrayList.addAll(response.body().getArticles());
@@ -62,7 +62,7 @@ public class ScienceFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(@NonNull Call<MainNews> call, @NonNull Throwable throwable) {
+            public void onFailure( Call<MainNews> call,  Throwable throwable) {
 
             }
         });

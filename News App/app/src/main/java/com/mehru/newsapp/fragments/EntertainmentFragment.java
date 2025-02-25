@@ -26,7 +26,7 @@ import retrofit2.Response;
 
 public class EntertainmentFragment extends Fragment {
 
-    String Api = "56bf92b9be644779ac46bea67e389104";
+    String api = "56bf92b9be644779ac46bea67e389104";
     ArrayList<ModelClass> modelClassArrayList;
     Adapter adapter ;
     String country  ="in";
@@ -35,7 +35,7 @@ public class EntertainmentFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        @SuppressLint("InflateParams") View v = inflater.inflate(R.layout.entertainment_fragment,null);
+         View v = inflater.inflate(R.layout.entertainment_fragment,null);
 
         RecyclerView recyclerViewEntertainment = v.findViewById(R.id.recyclerviewEntertainment);
         modelClassArrayList = new ArrayList<>();
@@ -50,8 +50,8 @@ public class EntertainmentFragment extends Fragment {
     }
     private void findNews() {
         String category = "entertainment";
-        ApiUtilities.getApiInterface().getCategoryNews(country, category,100,Api).enqueue(new Callback<MainNews>() {
-            @SuppressLint("NotifyDataSetChanged")
+        ApiUtilities.getApiInterface().getCategoryNews(country, category,100,api).enqueue(new Callback<MainNews>() {
+
             @Override
             public void onResponse(@NonNull Call<MainNews> call, @NonNull Response<MainNews> response) {
                 if (response.isSuccessful()){

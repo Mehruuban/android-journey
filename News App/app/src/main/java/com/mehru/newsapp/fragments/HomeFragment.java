@@ -2,12 +2,14 @@ package com.mehru.newsapp.fragments;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.arch.core.internal.SafeIterableMap;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,22 +28,36 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
-    String Api = "56bf92b9be644779ac46bea67e389104";
+    String api = "56bf92b9be644779ac46bea67e389104";
     ArrayList<ModelClass> modelClassArrayList;
     Adapter adapter ;
     String country  ="in";
+    RecyclerView recyclerviewHome;
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        @SuppressLint("InflateParams") View v = inflater.inflate(R.layout.home_fragment,container,false);
+        View v = inflater.inflate(R.layout.home_fragment,container,false);
+        
 
-        RecyclerView recyclerViewHome = v.findViewById(R.id.recyclerviewHome);
+        recyclerviewHome = v.findViewById(R.id.recyclerviewHome);
         modelClassArrayList = new ArrayList<>();
-        recyclerViewHome.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerviewHome.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new Adapter(getContext(),modelClassArrayList);
-        recyclerViewHome.setAdapter(adapter);
+        recyclerviewHome.setAdapter(adapter);
+
+
+
+        if (recyclerviewHome == null) {
+            Log.e("HomeFragment", "RecyclerView is NULL! Check your layout file.");
+        }
+
+        modelClassArrayList = new ArrayList<>();
+        recyclerviewHome.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        adapter = new Adapter(getContext(), modelClassArrayList);
+        recyclerviewHome.setAdapter(adapter);
 
         findNews();
 
@@ -49,13 +65,20 @@ public class HomeFragment extends Fragment {
 
     }
     private void findNews() {
-       ApiUtilities.getApiInterface().getNews(country,100,Api).enqueue(new Callback<MainNews>() {
+       ApiUtilities.getApiInterface().getNews(country,100,api).enqueue(new Callback<MainNews>() {
            @SuppressLint("NotifyDataSetChanged")
            @Override
            public void onResponse(@NonNull Call<MainNews> call, @NonNull Response<MainNews> response) {
-               if (response.isSuccessful()){
-                   assert response.body() != null;
+//               if (response.isSuccessful()){
+//                   assert response.body() != null;
+//                   modelClassArrayList.addAll(response.body().getArticles());
+//                   adapter.notifyDataSetChanged();
+//               }
+               if (response.isSuccessful() && response.body() != null) {
                    modelClassArrayList.addAll(response.body().getArticles());
+
+
+
                    adapter.notifyDataSetChanged();
                }
            }
