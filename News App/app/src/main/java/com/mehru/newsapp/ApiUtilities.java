@@ -1,5 +1,9 @@
 package com.mehru.newsapp;
 
+import android.util.Log;
+
+import androidx.transition.Transition;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -10,8 +14,11 @@ public class ApiUtilities {
 
 
         if (retrofit==null){
-            retrofit = new Retrofit.Builder().baseUrl(ApiInterface.BASE_URL).addConverterFactory(GsonConverterFactory.create())
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(ApiInterface.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build();
+
 
         }
           return retrofit.create(ApiInterface.class);
