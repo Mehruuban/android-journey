@@ -32,10 +32,11 @@ public class EntertainmentFragment extends Fragment {
     String country  ="in";
 
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         View v = inflater.inflate(R.layout.entertainment_fragment,null);
+         @SuppressLint("InflateParams") View v = inflater.inflate(R.layout.entertainment_fragment,null);
 
         RecyclerView recyclerViewEntertainment = v.findViewById(R.id.recyclerviewEntertainment);
         modelClassArrayList = new ArrayList<>();
@@ -52,6 +53,7 @@ public class EntertainmentFragment extends Fragment {
         String category = "entertainment";
         ApiUtilities.getApiInterface().getCategoryNews(country, category,100,api).enqueue(new Callback<MainNews>() {
 
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(@NonNull Call<MainNews> call, @NonNull Response<MainNews> response) {
                 if (response.isSuccessful()){

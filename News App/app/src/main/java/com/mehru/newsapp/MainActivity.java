@@ -2,6 +2,7 @@ package com.mehru.newsapp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     String api = "56bf92b9be644779ac46bea67e389104";
+
+    //String api1 = "56bf92b9be644779ac46bea67e389104";
 
 
     TabLayout tabLayout;
@@ -82,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        Log.d("Mehru","onFailure");
 
 
     }
