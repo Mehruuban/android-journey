@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -16,14 +16,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
+            android:layout_margin="0dp"
             android:id="@+id/ABCrow"
-            android:padding="11dp">
+            android:padding="10dp">
 
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:id="@+id/imgContact"
                 android:background="#EAFB22"
+                android:layout_margin="0dp"
+                android:padding="0dp"
                 android:contentDescription="@string/contact_image"
                 tools:srcCompat="@drawable/contact_logo" />
 
@@ -38,12 +41,15 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txtName"
                     android:text="@string/contact"
+                    android:layout_margin="0dp"
                     android:textSize="20sp"
+                    android:fontFamily="sans-serif"
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtNumber"
+                    android:fontFamily="sans-serif"
                     android:text="@string/contact_number"
                     android:textSize="16sp"/>
 
