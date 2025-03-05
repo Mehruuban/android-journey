@@ -2,19 +2,20 @@
 "age":23,
 "email":"mehru@gmail.com",
 "list":
-[
-{
-"course_name":"java",
-"fees":2989
-},
-{
-"course_name":"kotlin",
-"fees":2990
-},
-{
-"course_name":"android",
-"fees":2991
-},
-],
-"name":"mehru"
+ [
+   {
+    "course_name":"java",
+    "fees":2989
+  },
+
+   {
+     "course_name":"kotlin",
+     "fees":2990
+   },
+    {
+       "course_name":"android",
+      "fees":2991
+    },
+ ],
+      "name":"mehru"
 }
