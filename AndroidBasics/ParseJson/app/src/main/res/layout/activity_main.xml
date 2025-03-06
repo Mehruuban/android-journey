@@ -4,35 +4,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:layout_gravity="start"
-       android:layout_margin="50dp"
+        android:id="@+id/TextView"
         android:text="ParseJson"
+        android:layout_margin="25dp"
         android:textStyle="bold"/>
 
-
     <Button
-        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/button"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="20dp"
-        android:textStyle="bold"
-        android:backgroundTint="#11A1E2"
-        android:textColor="@color/black"
         android:layout_alignParentBottom="true"
-        android:text="FetchData"/>
+        android:layout_marginBottom="25dp"
+        android:text="FetchData"
+        android:textStyle="bold"/>
 
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="https://api.json-generator.com/templates/8zZn6-kdc970/data"/>
 
 </RelativeLayout>

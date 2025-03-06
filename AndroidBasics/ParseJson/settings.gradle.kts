@@ -19,7 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "JsonEx"
-include(":app")
+rootProject.name = "ParseJson"
 include(":app")
  
