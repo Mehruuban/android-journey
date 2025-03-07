@@ -7,19 +7,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#ffe2f0"
     tools:context=".Player">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTintMode="screen"
+        android:background="#ffe5d3"
+        android:id="@+id/toolbar"/>
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/black"
+             android:id="@+id/frameLayout">
 
         <VideoView
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:id="@+id/videoView"/>
 
+             <ProgressBar
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/progressBar"
+                 android:layout_gravity="center"/>
+             <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/sharp_close_fullscreen_24"
+                 android:padding="10dp"
+                 android:id="@+id/fullScreenOp"
+                 android:layout_gravity="end"/>
+
+
+         </FrameLayout>
+
 
      <androidx.cardview.widget.CardView
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:layout_margin="10dp"
+         android:layout_margin="5dp"
          android:layout_marginTop="10dp">
 
 
@@ -33,8 +62,11 @@
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:textStyle="bold"
+                 android:id="@+id/VideoTitle"
+                 android:layout_marginLeft="10dp"
+                 android:layout_marginRight="10dp"
                  android:fontFamily="sans-serif"
-                 android:text="this is thee title of our video"/>
+                 android:text="this is the title of our video"/>
 
 
          </RelativeLayout>
@@ -44,7 +76,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="7dp"
         android:layout_marginTop="5dp">
 
         <RelativeLayout
@@ -54,17 +86,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="description of our video"
-
-
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/VideoDesc"
+                android:text="description of our video"/>
         </RelativeLayout>
-
-
-
     </androidx.cardview.widget.CardView>
-
-
-
-
 
 </LinearLayout>

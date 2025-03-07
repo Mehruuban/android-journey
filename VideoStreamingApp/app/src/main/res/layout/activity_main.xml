@@ -13,7 +13,19 @@
   <androidx.appcompat.widget.Toolbar
       android:layout_width="match_parent"
       android:id="@+id/toolbar"
-      android:layout_height="?attr/actionBarSize"/>
+      android:background="#0BA4E9"
+      android:layout_height="?attr/actionBarSize">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textStyle="bold"
+          android:textSize="20sp"
+          android:gravity="center"
+          android:layout_marginTop="25dp"
+          android:fontFamily="sans-serif"
+          android:text="Video List"/>
+  </androidx.appcompat.widget.Toolbar>
 
    <androidx.recyclerview.widget.RecyclerView
        android:layout_width="match_parent"

@@ -2,6 +2,7 @@ package com.mehru.videostreamingapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.ContentInfo;
 import android.view.LayoutInflater;
@@ -56,7 +57,14 @@ public class VideoAdapter  extends RecyclerView.Adapter<VideoAdapter.ViewHolder>
         holder.vv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.getContext().startActivity(new Intent(context,Player.class));
+                Bundle b = new Bundle();
+                b.putSerializable("videoData",allVideos.get(position));
+
+                Intent i =  new Intent(context,Player.class);
+                i.putExtras(b);
+                v.getContext().startActivity(i);
+
+                //v.getContext().startActivity(new Intent(context,Player.class));
             }
         });
 
@@ -76,7 +84,7 @@ public class VideoAdapter  extends RecyclerView.Adapter<VideoAdapter.ViewHolder>
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             videoImage = itemView.findViewById(R.id.videoThumbnail);
-            title = itemView.findViewById(R.id.videoTitle);
+            title = itemView.findViewById(R.id.title);
             vv = itemView;
         }
     }
