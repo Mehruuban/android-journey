@@ -28,14 +28,14 @@
             android:text="X News"
             android:textSize="45sp"
             android:textStyle="bold"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="serif"
             android:textColor="@color/white"/>
         
         <ProgressBar
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_margin="20dp"
-            android:indeterminateTint="@color/black"/>
+            android:indeterminateTint="#F4F407"/>
     </LinearLayout>
 
 

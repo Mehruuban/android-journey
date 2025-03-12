@@ -24,6 +24,8 @@ public class webView extends AppCompatActivity {
         setContentView(R.layout.activity_web_view);
 
 
+
+
         toolbar = findViewById(R.id.toolbar);
         webView= findViewById(R.id.webView);
         setSupportActionBar(toolbar);
@@ -32,6 +34,7 @@ public class webView extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(url);
     }
+
 
     private void setSupportActionBar(Toolbar toolbar) {
     }

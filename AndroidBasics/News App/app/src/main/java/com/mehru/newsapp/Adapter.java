@@ -21,6 +21,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+    private static final String API_URL = "mohammad";
     Context context ;
     ArrayList<ModelClass> ModelClassarrayList ;
 
@@ -51,6 +52,29 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.mHeading.setText(ModelClassarrayList.get(position).getTitle());
         holder.mCategory.setText(ModelClassarrayList.get(position).getDescription());
         Glide.with(context).load(ModelClassarrayList.get(position).getUrlToImage()).into(holder.imageView);
+
+
+        String imageUrl = ModelClassarrayList.get(position).getUrlToImage();
+        if (imageUrl != null && imageUrl.startsWith("https://")) {
+            imageUrl = imageUrl.replace("https://", "http://");
+        }
+
+
+        Log.d("NewsAPI", "Fetching news...");
+        Log.d("NewsAPI", "URL: " + API_URL); // Print API URL
+
+
+
+
+        // Load image with Glide
+        Glide.with(context)
+                .load(imageUrl)
+                .into(holder.imageView);
+
+
+
+
+
 
 
     }

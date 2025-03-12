@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     String api = "56bf92b9be644779ac46bea67e389104";
 
-    //String api1 = "56bf92b9be644779ac46bea67e389104";
-
 
     TabLayout tabLayout;
     TabItem home,technology,sport,health,entertainment,science;
@@ -69,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 if (tab.getPosition()==0|| tab.getPosition()==1 || tab.getPosition()==2
                 ||tab.getPosition()==3 || tab.getPosition()==4 || tab.getPosition()==5){
                     pagerAdapter.notifyDataSetChanged();
+
                 }
 
 
@@ -84,8 +83,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        Log.d("Mehru","onFailure");
+
+
+
 
 
     }
