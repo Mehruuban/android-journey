@@ -32,8 +32,8 @@
             android:textColor="@color/white"/>
         
         <ProgressBar
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
             android:layout_margin="20dp"
             android:indeterminateTint="#F4F407"/>
     </LinearLayout>
