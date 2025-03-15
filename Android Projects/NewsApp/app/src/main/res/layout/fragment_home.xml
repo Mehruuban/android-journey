@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".fragments.HomeFragment">
 
    <androidx.recyclerview.widget.RecyclerView
@@ -12,4 +13,35 @@
        android:id="@+id/categoryRecyclerView"
        tools:ignore="MissingConstraints" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+
+   <androidx.cardview.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:cardCornerRadius="25dp"
+       android:elevation="10dp"
+       android:layout_margin="8dp">
+
+      <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="220dp"
+         android:text="A good newspaper is a nation talking to itself Arthur Miller"
+         android:textSize="25sp"
+         android:textStyle="bold"
+          android:src="@drawable/news"
+          android:scaleType="fitXY"
+         android:textAllCaps="true"
+          android:elevation="233dp"
+         android:layout_margin="12dp"
+         android:textColor="#18FFFF"
+         android:fontFamily="serif"/>
+
+
+   </androidx.cardview.widget.CardView>
+   </RelativeLayout>
+
+</LinearLayout>

@@ -1,5 +1,7 @@
 package com.mehru.newsapp.fragments;
 
+import android.annotation.SuppressLint;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,26 +11,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.mehru.newsapp.Adapter.CategoryAdapter;
 import com.mehru.newsapp.Model.CategoryModel;
+import com.mehru.newsapp.Model.SliderModel;
 import com.mehru.newsapp.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
 public class HomeFragment extends Fragment {
 
     private RecyclerView categoryRecyclerView;
+   // private ImageSlider imageSlider;
     String  textImageUrl = "https://picsum.photos/200";
-
 
 
     public HomeFragment() {
         // Required empty public constructor
     }
-
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,6 +43,8 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         categoryRecyclerView = view.findViewById(R.id.categoryRecyclerView);
+        //imageSlider = view.findViewById(R.id.imageSlider);
+
         LinearLayoutManager categorylinearLayoutManager = new LinearLayoutManager(getContext());
         categorylinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
@@ -53,6 +62,8 @@ public class HomeFragment extends Fragment {
         CategoryAdapter categoryAdapter = new CategoryAdapter(categoryModelList);
         categoryRecyclerView.setAdapter(categoryAdapter);
         categoryAdapter.notifyDataSetChanged();
+
+
 
 
         return view;
