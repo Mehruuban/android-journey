@@ -1,5 +1,6 @@
 package com.mehru.newsapp.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.mehru.newsapp.Model.TrendingModel;
+import com.mehru.newsapp.News_Details;
 import com.mehru.newsapp.R;
 
 import java.util.List;
@@ -77,6 +79,15 @@ public class TrendingAdapter extends RecyclerView.Adapter<TrendingAdapter.viewHo
                     .centerCrop()
                     .placeholder(R.drawable.home)
                     .into(trendingImageView);
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(itemView.getContext(), News_Details.class);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
 
         }
 

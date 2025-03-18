@@ -39,7 +39,7 @@
           android:layout_height="220dp"
           android:id="@+id/imageView"
           android:src="@drawable/news"
-          android:scaleType="fitXY"
+          android:scaleType="centerCrop"
           android:textAllCaps="true"
           android:elevation="233dp"
           android:layout_margin="12dp"

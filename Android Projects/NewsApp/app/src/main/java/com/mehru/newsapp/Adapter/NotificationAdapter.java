@@ -13,35 +13,33 @@ import com.bumptech.glide.Glide;
 import com.mehru.newsapp.Model.TrendingModel;
 import com.mehru.newsapp.R;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
-public class Notification_Adapter extends RecyclerView.Adapter<Notification_Adapter.viewHolder> {
+public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.viewHolder> {
 
     List<TrendingModel> trendingModelList ;
 
-    public Notification_Adapter(List<TrendingModel> trendingModelList) {
+    public NotificationAdapter(List<TrendingModel> trendingModelList) {
         this.trendingModelList = trendingModelList;
     }
 
 
     @NonNull
     @Override
-    public Notification_Adapter.viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NotificationAdapter.viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notification_item_layout,parent,false);
         return new viewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Notification_Adapter.viewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull NotificationAdapter.viewHolder holder, int position) {
         int trendingID= trendingModelList.get(position).getId();
         String trendingTitle = trendingModelList.get(position).getTrendingTitle();
         String trendingCategory = trendingModelList.get(position).getTrendingCategory();
         String trendingDate = trendingModelList.get(position).getTrendingDate();
-        String imageUrl = trendingModelList.get(position).getTrendingImageUrl();
+        String trendingImageUrl = trendingModelList.get(position).getTrendingImageUrl();
 
-        holder.setData(no);
+        holder.setData(trendingID ,trendingTitle,trendingImageUrl,trendingDate,trendingCategory);
 
 
     }

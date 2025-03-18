@@ -28,10 +28,10 @@ public class CategoryFragment extends Fragment {
 
 
     private RecyclerView allCategory_recyclerView;
-    String  textImageUrl2 = "https://picsum.photos/400";
-    String  textImageUrl1 = "https://picsum.photos/400";
-    String  textImageUrl3 = "https://picsum.photos/400";
-    String  textImageUrl4 = "https://picsum.photos/400";
+    String  textImageUrl2 = "https://picsum.photos/400/400";
+    String  textImageUrl1 = "https://picsum.photos/200/200";
+    String  textImageUrl3 = "https://picsum.photos/400/300";
+    String  textImageUrl4 = "https://picsum.photos/400/500";
 
 
 
