@@ -54,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/trendingDate"
-                android:text="this is our news app "
+                android:text="this is our news app by mohammad meharban  "
                 android:layout_below="@id/trendingTitleTV"
                 android:textSize="12sp"
                 android:layout_marginStart="8dp"
