@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".NewsFullActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -21,7 +17,6 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20sp"/>
-    </androidx.appcompat.widget.Toolbar>
 
     <WebView
         android:layout_width="match_parent"
@@ -30,4 +25,4 @@
         android:layout_margin="5dp"/>
 
 
-</LinearLayout>
+</RelativeLayout>
