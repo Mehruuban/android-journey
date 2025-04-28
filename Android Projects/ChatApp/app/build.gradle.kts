@@ -1,14 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
-    namespace = "com.mehru.newsapp"
+    namespace = "com.mehru.chatapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.mehru.newsapp"
-        minSdk = 21
+        applicationId = "com.mehru.chatapp"
+        minSdk = 23
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -37,29 +38,20 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
-    implementation ("com.github.KwabenBerko:News-API-Java:1.0.2")
-    implementation ("com.github.KwabenBerko:News-API-Java:1.0.2")
+      // for circle image view
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 
+    // for country code picker
+    implementation("com.hbb20:ccp:2.5.1")
+    //firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
+    implementation("com.google.firebase:firebase-auth")
 
-    implementation ("androidx.appcompat:appcompat:1.6.1")
-    implementation ("androidx.core:core:1.12.0")
-    implementation ("com.google.android.material:material:1.11.0")
-    implementation ("com.squareup.picasso:picasso:2.8")
-
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.squareup.okhttp3:logging-interceptor:4.10.0")
-
-
-    //for circle imageview
-        implementation ("de.hdodenhof:circleimageview:3.1.0")
-    
-    // for lottie animation
-    implementation("com.airbnb.android:lottie:6.6.6")
-
-
+    // FirebaseUI for Cloud Firestore
+    implementation ("com.firebaseui:firebase-ui-firestore:9.0.0")
 }

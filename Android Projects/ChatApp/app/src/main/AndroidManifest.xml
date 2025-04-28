@@ -3,23 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/newsroy"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NewsApp"
+        android:theme="@style/Theme.ChatApp"
         tools:targetApi="31">
         <activity
-            android:name=".NewsFullActivity"
-            android:exported="false" />
+            android:name=".ChatActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false"/>
+
         <activity
-            android:name=".Splash"
+            android:name=".searchUserActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".LoginUserNameActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".LoginOtpActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".LoginPhoneNoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Splash_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

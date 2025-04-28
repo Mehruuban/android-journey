@@ -1,0 +1,43 @@
+package com.mehru.chatapp;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import com.mehru.chatapp.Utils.FirebaseUtils;
+
+public class Splash_Activity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_splash);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                if (FirebaseUtils.isLoggedIn()) {
+                    startActivity(new Intent(Splash_Activity.this, MainActivity.class));
+                }else {
+                    startActivity(new Intent(Splash_Activity.this,LoginPhoneNoActivity.class));
+                }
+                finish();
+
+            }
+        },1000);
+    }
+}
