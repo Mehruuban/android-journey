@@ -1,5 +1,7 @@
 package com.mehru.chatapp;
 
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -47,6 +49,8 @@ public class ChatActivity extends AppCompatActivity {
 
     ChatRoomModel chatRoomModel ;
     ChatRecyclerAdapter adapter ;
+    ImageView imageView ;
+    Context context ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +66,18 @@ public class ChatActivity extends AppCompatActivity {
         messageChatInput =findViewById(R.id.message_chat_input);
         profileUserName = findViewById(R.id.profile_userName);
         recyclerView = findViewById(R.id.chat_recycler_view);
+        imageView = findViewById(R.id.profile_pic_imageView);
+
+
+        FirebaseUtils.getOtherProfilePicStorageReference(otherUser.getUserId()).getDownloadUrl()
+                .addOnCompleteListener(new OnCompleteListener<Uri>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Uri> task) {
+                        if (task.isSuccessful()){
+                            Uri uri = task.getResult();AndroidUtil.setProfilePic(context,uri,imageView);
+                        }
+                    }
+                });
 
         profileUserName.setText(otherUser.getUserName());
 
@@ -73,12 +89,9 @@ public class ChatActivity extends AppCompatActivity {
             String message = messageChatInput.getText().toString().trim();
             if (message.isEmpty())
                 return;
-
             sendMessageToUser(message);
         });
-
         setUpChatRecyclerView();
-
        getOrCreateChatRoomModel();
 
     }
@@ -102,9 +115,7 @@ public class ChatActivity extends AppCompatActivity {
                 recyclerView.smoothScrollToPosition(0);
             }
         });
-
     }
-
     void sendMessageToUser(String message){
 
         chatRoomModel.setLastMessageTimeStamp(Timestamp.now());
@@ -123,10 +134,6 @@ public class ChatActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-
-
     }
 
     void getOrCreateChatRoomModel(){
@@ -149,6 +156,5 @@ public class ChatActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }

@@ -3,6 +3,7 @@ package com.mehru.chatapp.Adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,18 @@ public class ChatFragRecyclerAdapter extends FirestoreRecyclerAdapter<ChatRoomMo
                         boolean lastMessageSendByMe =chatRoomModel.getLastMessageSender().equals(FirebaseUtils.currentUserId());
 
                         UserModel otheruserModel = task.getResult().toObject(UserModel.class);
+
+
+                        FirebaseUtils.getOtherProfilePicStorageReference(otheruserModel.getUserId()).getDownloadUrl()
+                                .addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Uri> task) {
+                                        if (task.isSuccessful()){
+                                            Uri uri = task.getResult();AndroidUtil.setProfilePic(context,uri,holder.profilePic);
+                                        }
+                                    }
+                                });
+
                         if (otheruserModel!=null){
                             holder.userNameText.setText(otheruserModel.getUserName());
 

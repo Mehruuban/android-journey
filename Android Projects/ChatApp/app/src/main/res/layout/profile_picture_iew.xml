@@ -12,7 +12,6 @@
         android:layout_centerInParent="true"
         android:background="@drawable/circular_bg"
         android:padding="5dp"
-        app:tint="#A29696"
         android:backgroundTint="@color/off_white"
         android:id="@+id/profile_pic_imageView"/>
 

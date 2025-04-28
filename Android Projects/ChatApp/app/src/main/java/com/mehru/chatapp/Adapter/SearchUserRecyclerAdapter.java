@@ -3,6 +3,7 @@ package com.mehru.chatapp.Adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.mehru.chatapp.ChatActivity;
 import com.mehru.chatapp.R;
 import com.mehru.chatapp.Utils.AndroidUtil;
@@ -38,6 +41,17 @@ public class SearchUserRecyclerAdapter  extends FirestoreRecyclerAdapter<UserMod
          if (userModel.getUserId().equals(FirebaseUtils.currentUserId())){
              holder.userNameText.setText(userModel.getUserName()+"(Me)");
        }
+
+        FirebaseUtils.getOtherProfilePicStorageReference(userModel.getUserId()).getDownloadUrl()
+                .addOnCompleteListener(new OnCompleteListener<Uri>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Uri> task) {
+                        if (task.isSuccessful()){
+                            Uri uri = task.getResult();AndroidUtil.setProfilePic(context,uri,holder.profilePic);
+                        }
+                    }
+                });
+
 
          holder.itemView.setOnClickListener(v -> {
              //navigate to chat activity

@@ -5,6 +5,8 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
@@ -40,6 +42,19 @@ public class FirebaseUtils {
 
     public  static CollectionReference allChatRoomCollectionReference(){
         return FirebaseFirestore.getInstance().collection("chatrooms");
+    }
+
+
+    public static StorageReference getCurrentProfilePicStorageReference(){
+        return FirebaseStorage.getInstance().getReference().child("profilePic")
+                .child(FirebaseUtils.currentUserId());
+
+    }
+
+    public static StorageReference getOtherProfilePicStorageReference(String otherUserId){
+        return FirebaseStorage.getInstance().getReference().child("profilePic")
+                .child(otherUserId);
+
     }
 
     public static void logout(){
