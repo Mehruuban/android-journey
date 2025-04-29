@@ -37,6 +37,7 @@ public class Splash_Activity extends AppCompatActivity {
         if ( FirebaseUtils.isLoggedIn() && getIntent().getExtras()!=null){
             //from notification
             String userId =getIntent().getExtras().getString("userId");
+
             FirebaseUtils.UsercollectionReference().document(userId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {

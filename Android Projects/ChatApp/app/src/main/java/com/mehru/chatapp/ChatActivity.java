@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -34,7 +35,18 @@ import com.mehru.chatapp.model.ChatMessageModel;
 import com.mehru.chatapp.model.ChatRoomModel;
 import com.mehru.chatapp.model.UserModel;
 
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.Arrays;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class ChatActivity extends AppCompatActivity {
     String chatRoomId;
@@ -43,7 +55,6 @@ public class ChatActivity extends AppCompatActivity {
     TextView profileUserName;
     EditText messageChatInput;
     ImageButton messageSendBtn;
-
     ImageView backBtn;
     RecyclerView recyclerView ;
 
@@ -83,8 +94,8 @@ public class ChatActivity extends AppCompatActivity {
 
         backBtn.setOnClickListener(v -> {
             onBackPressed();
-       });
 
+       });
         messageSendBtn.setOnClickListener(v -> {
             String message = messageChatInput.getText().toString().trim();
             if (message.isEmpty())
@@ -93,9 +104,7 @@ public class ChatActivity extends AppCompatActivity {
         });
         setUpChatRecyclerView();
        getOrCreateChatRoomModel();
-
     }
-
     void setUpChatRecyclerView(){
         Query query =FirebaseUtils.getChatRoomMessageReference(chatRoomId)
                 .orderBy("timestamp",Query.Direction.DESCENDING);
@@ -117,7 +126,6 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
     void sendMessageToUser(String message){
-
         chatRoomModel.setLastMessageTimeStamp(Timestamp.now());
         chatRoomModel.setLastMessageSender(FirebaseUtils.currentUserId());
         chatRoomModel.setLastMessage(message);
@@ -130,12 +138,12 @@ public class ChatActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<DocumentReference> task) {
                         if (task.isSuccessful()){
                             messageChatInput.setText("");
-                        }
 
+                            sendNotification(message);
+                        }
                     }
                 });
     }
-
     void getOrCreateChatRoomModel(){
         FirebaseUtils.getChatRoomReference(chatRoomId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -154,6 +162,62 @@ public class ChatActivity extends AppCompatActivity {
                         FirebaseUtils.getChatRoomReference(chatRoomId).set(chatRoomModel);
                     }
                 }
+            }
+        });
+    }
+    void  sendNotification(String massage){
+        //message,currentUsername ,userId,otherUserToken
+        FirebaseUtils.currentUserDetails().get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()){
+                    UserModel currentUser = task.getResult().toObject(UserModel.class);
+                    try {
+                        JSONObject jsonObject = new JSONObject();
+
+                        JSONObject notificationJsonObject = new JSONObject();
+                        notificationJsonObject.put("title",currentUser.getUserName());
+                        notificationJsonObject.put("body",massage);
+
+                        JSONObject dataJsonObject = new JSONObject();
+                        dataJsonObject.put("userId",currentUser.getUserId());
+
+                        jsonObject.put("notification",notificationJsonObject);
+                        jsonObject.put("data",dataJsonObject);
+                        jsonObject.put("to",otherUser.getFcmToken());
+
+                        callAPI(jsonObject);
+
+                    }catch (Exception e){
+
+                    }
+                }
+            }
+        });
+    }
+    void callAPI(JSONObject jsonObject){
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
+        OkHttpClient client = new OkHttpClient();
+        String url = "https://fcm.googleapis.com/fcm/send";
+
+        RequestBody requestBody = RequestBody.create(JSON, jsonObject.toString());
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .header("authorization","Bearer ")
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+
             }
         });
     }

@@ -42,6 +42,7 @@ public class ChatFragRecyclerAdapter extends FirestoreRecyclerAdapter<ChatRoomMo
     protected void onBindViewHolder(@NonNull ChatFragRoomModelViewHolder holder, int i, @NonNull ChatRoomModel chatRoomModel) {
         FirebaseUtils.getOtherUserFromChatRoom(chatRoomModel.getUserIds())
                 .get().addOnCompleteListener(task -> {
+
                     if (task.isSuccessful()){
                         boolean lastMessageSendByMe =chatRoomModel.getLastMessageSender().equals(FirebaseUtils.currentUserId());
 

@@ -53,12 +53,11 @@ dependencies {
     //firebase
     implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
     implementation("com.google.firebase:firebase-auth")
-
     // FirebaseUI for Cloud Firestore
     implementation ("com.firebaseui:firebase-ui-firestore:9.0.0")
-
     //image picker
     implementation ("com.github.dhaval2404:imagepicker:2.1")
-
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    //okhttp
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 }
