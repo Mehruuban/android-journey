@@ -26,6 +26,7 @@ import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.UploadTask;
 import com.mehru.chatapp.Utils.AndroidUtil;
 import com.mehru.chatapp.Utils.FirebaseUtils;
@@ -86,10 +87,19 @@ public class ProfileFragment extends Fragment {
         });
 
         logoutBtn.setOnClickListener(v -> {
-            FirebaseUtils.logout();
-            Intent intent = new Intent(getContext(), Splash_Activity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
+
+            FirebaseMessaging.getInstance().deleteToken().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        FirebaseUtils.logout();
+                        Intent intent = new Intent(getContext(), Splash_Activity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    }
+
+                }
+            });
         });
 
         profilePic.setOnClickListener(v -> {

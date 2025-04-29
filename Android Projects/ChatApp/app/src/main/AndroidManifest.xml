@@ -47,6 +47,13 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <service android:name=".FCMNotificationService" android:exported="false">
+
+            <intent-filter>
+                <action android:name="com.googlre.Firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
