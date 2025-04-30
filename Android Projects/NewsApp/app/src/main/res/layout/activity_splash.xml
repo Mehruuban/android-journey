@@ -21,20 +21,21 @@
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/newsLogo"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:src="@drawable/mehru"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/mehrumehru"
             app:civ_border_width="2dp"
 
             app:civ_border_color="#FF000000"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Daily News"
+            android:text="Let's Read News Together"
             android:textSize="25sp"
-            android:textStyle="bold"
+            android:textStyle="italic"
+            android:layout_marginTop="50dp"
             android:textColor="@color/white"
-            android:fontFamily="sans-serif-smallcaps"/>
+            android:fontFamily="serif"/>
 
         <ProgressBar
             android:layout_width="20dp"
@@ -48,11 +49,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Devloped  Meharban Alam"
+        android:text="Meharban Alam"
         android:layout_alignParentBottom="true"
-        android:textColor="#66BB6A"
-        android:fontFamily="sans-serif-medium"
+        android:textColor="#00050F"
+        android:fontFamily="sans-serif-condensed"
         android:layout_centerInParent="true"
+        android:layout_margin="10dp"
         android:gravity="center"/>
 
 
