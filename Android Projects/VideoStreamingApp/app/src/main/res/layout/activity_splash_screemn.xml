@@ -6,25 +6,25 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#40F6F6"
+    android:layout_centerInParent="true"
+    android:orientation="vertical"
     android:gravity="center"
     tools:context=".SplashScreen">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Welcome"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="50sp"
-        android:fontFamily="sans-serif-condensed-light"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="55sp"
+            android:fontFamily="sans-serif-condensed-light"/>
 
-    <ProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:outlineAmbientShadowColor="#FAFA07"
-        android:layout_marginTop="10dp"/>
-
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:outlineAmbientShadowColor="#FAFA07"/>
 
 </LinearLayout>
