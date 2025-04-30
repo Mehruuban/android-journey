@@ -19,7 +19,7 @@
             android:id="@+id/profile_image"
             android:layout_width="175dp"
             android:layout_height="175dp"
-            android:src="@drawable/mehru"
+            android:src="@drawable/mehrumehru"
             app:civ_border_width="5dp"
             app:civ_border_color="@color/my_primary"/>
 
