@@ -8,20 +8,31 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
        Button addBtN ;
        EditText edtEmail;
        EditText edtName;
        FirebaseFirestore db;
+       ArrayList<UserModel> dataList;
+       RecyclerView recyclerVie ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         addBtN = findViewById(R.id.addBtn);
         edtEmail = findViewById(R.id.editEmail);
         edtName = findViewById(R.id.editName);
+        recyclerVie= findViewById(R.id.rcvData);
 
         db= FirebaseFirestore.getInstance();
 
@@ -59,6 +71,23 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+        allData();
+    }
+
+    public void allData (){
+        dataList = new ArrayList<>();
+        dataList.clear();
+        db.collection("user").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                if (error==null){
+                    List<UserModel> data =value.toObjects(UserModel.class);
+                    dataList.addAll(data);
+                    recyclerVie.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                    recyclerVie.setAdapter(new ReadDataAdapter(MainActivity.this,dataList));
+                }
             }
         });
     }
