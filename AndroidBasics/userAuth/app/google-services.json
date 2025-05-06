@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "89171849877",
+    "project_id": "userauth-ac42e",
+    "storage_bucket": "userauth-ac42e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89171849877:android:d6847d0366018e2e74a19c",
+        "android_client_info": {
+          "package_name": "com.mehru.userauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWBE_BkXQ-I8HZw5WTlFIQ-C2c3tokzT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
