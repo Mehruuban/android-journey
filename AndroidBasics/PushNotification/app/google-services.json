@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "595313637063",
+    "project_id": "pushnotification-101e8",
+    "storage_bucket": "pushnotification-101e8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595313637063:android:ea7f2f4495c9b5c93ff0e2",
+        "android_client_info": {
+          "package_name": "com.mehru.pushnotification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXEmUlexR0aRd_ZGfl0z5_uIu5_aZTGt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
