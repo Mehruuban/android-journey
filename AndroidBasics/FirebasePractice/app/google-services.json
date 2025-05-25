@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "324320770622",
+    "project_id": "fir-practice-ac4e0",
+    "storage_bucket": "fir-practice-ac4e0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324320770622:android:4659f7c11043bfd391ef6f",
+        "android_client_info": {
+          "package_name": "com.mehru.firebasepractice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANnP8ab8Qdam8eA_RWD6z1qt9nbIjprh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
