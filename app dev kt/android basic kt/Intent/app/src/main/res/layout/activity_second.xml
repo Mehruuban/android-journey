@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
     android:background="#14E41D"
     android:layout_height="match_parent"
@@ -16,7 +15,58 @@
         android:layout_height="wrap_content"
         android:text="Second Activty"
         android:textSize="35sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Implicit intent passing"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginTop="25sp"
+        android:textSize="20sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="open webpage"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:id="@+id/btn_web"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="open     phone"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btn_phone"/>
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="open   camera"
+    android:textSize="15sp"
+    android:layout_marginTop="10dp"
+    android:layout_gravity="center"
+    android:id="@+id/btn_camera"/>
+
+
+    </LinearLayout>
 
 </LinearLayout>

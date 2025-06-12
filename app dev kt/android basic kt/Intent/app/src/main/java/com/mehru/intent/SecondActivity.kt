@@ -1,6 +1,10 @@
 package com.mehru.intent
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,10 +15,31 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_second)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        var btn_web = findViewById<Button>(R.id.btn_web)
+        var btn_phone = findViewById<Button>(R.id.btn_phone)
+        var btn_camera = findViewById<Button>(R.id.btn_camera)
+
+
+        btn_web.setOnClickListener {
+
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/"))
+            startActivity(intent)
+        }
+
+
+        btn_phone.setOnClickListener {
+
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel: +91 8882988023")
+            startActivity(intent)
+        }
+
+
+        btn_camera.setOnClickListener {
+
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivity(intent)
         }
     }
 }
