@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Learning Fragments concepts"
+        android:textSize="40sp"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="8dp"
+       android:orientation="horizontal">
+
+
+
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Clock"
+           android:textStyle="bold"
+           android:layout_margin="10dp"
+           android:id="@+id/btn_clock"/>
+
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="sheet"
+           android:layout_margin="10dp"
+           android:textStyle="bold"
+           android:id="@+id/btn_sheet"/>
+
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Validate"
+           android:textStyle="bold"
+           android:layout_margin="10dp"
+           android:id="@+id/btn_validate"/>
+
+   </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_weight="5"
+        android:id="@+id/view"
+        android:backgroundTint="#D71E1E"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/framelayout"/>
+
+</LinearLayout>
