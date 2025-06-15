@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:layout_gravity="center"
+      android:layout_margin="15dp"
+      android:textSize="25sp"
+      android:textStyle="bold"
+      android:text="Welcome to jit Cafe"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:id="@+id/et1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Order 1"
+        />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et2"
+        android:layout_margin="15dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Order 2"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et3"
+        android:layout_margin="15dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Order 3"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et4"
+        android:layout_margin="15dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Order 4"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnOrder"
+        android:text="Order Now"
+        android:layout_margin="10dp"
+        android:backgroundTint="#6DDC0C"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
+
+
+</LinearLayout>
