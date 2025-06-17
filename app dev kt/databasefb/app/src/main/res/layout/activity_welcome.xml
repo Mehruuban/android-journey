@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:id="@+id/tvWelcome"
+        android:textSize="45sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textSize="30sp"
+        android:layout_marginTop="25dp"
+        android:text="here is your Information"
+        android:layout_gravity="center"/>
+
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnUser"
+        android:hint="UserName "
+        android:layout_gravity="center"
+        android:background="#734848"
+        android:layout_marginTop="65dp"/>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnEmail"
+        android:hint="Email"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:background="#875050"
+        />
+
+
+</LinearLayout>
