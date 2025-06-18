@@ -7,14 +7,67 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:background="#F0AE9F"
     tools:context=".MainActivity">
+
 
    <TextView
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:text="hey Meharban"
-       android:textSize="50sp"
-       android:id="@+id/tv"/>
+      android:text="Welcome "
+      android:textSize="25sp"
+      android:textStyle="bold"
+      android:layout_gravity="center"
+      android:layout_marginTop="25dp"/>
+
+
+   <com.google.android.material.textfield.TextInputLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="200dp"
+      android:layout_gravity="center">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="350dp"
+          android:layout_height="55dp"
+         android:background="@drawable/background"
+         android:hint="Enter Your name"
+         android:textColor="@color/black"
+         android:id="@+id/etUser"/>
+   </com.google.android.material.textfield.TextInputLayout>
+
+   <com.google.android.material.textfield.TextInputLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:layout_marginTop="20dp">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="350dp"
+          android:layout_height="55dp"
+          android:hint="Enter email "
+          android:id="@+id/etEmail"
+          android:background="@drawable/background"
+          android:textColor="@color/black"/>
+   </com.google.android.material.textfield.TextInputLayout>
+
+   <CheckBox
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="25dp"
+       android:layout_marginTop="20dp"
+       android:id="@+id/checkBox"
+      android:text="agree terms and consditions"/>
+
+
+   <androidx.appcompat.widget.AppCompatButton
+       android:layout_width="300dp"
+       android:layout_height="55dp"
+       android:id="@+id/btnSubmit"
+      android:text="SUBMIT"
+      android:layout_gravity="center"
+      android:layout_marginTop="35dp"
+      android:background="#C882C8"
+      android:shadowRadius="5"/>
 
 </LinearLayout>
