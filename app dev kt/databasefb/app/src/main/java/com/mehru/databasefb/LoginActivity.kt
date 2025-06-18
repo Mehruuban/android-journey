@@ -31,9 +31,9 @@ class LoginActivity : AppCompatActivity() {
 
         btnSignIn.setOnClickListener {
 
-            val loginUser = loginUser.text.toString()
-            if (loginUser.isNotEmpty()) {
-                readData(loginUser)
+            val userId = loginUser.text.toString()
+            if (userId.isNotEmpty()) {
+                readData(userId)
 
             }else{
                 Toast.makeText(this,"Enter user name" , Toast.LENGTH_SHORT).show()
@@ -48,9 +48,9 @@ class LoginActivity : AppCompatActivity() {
             // if user exist or not
             if (it.exists()){
                 // welcome user to our app
-                val username = it.child("name")
-                val email = it.child("email")
-                val uniqueId = it.child("uniqueId")
+                val username = it.child("name").value
+                val email = it.child("email").value
+                val uniqueId = it.child("uniqueId").value
 
                 val intent = Intent(this , WelcomeActivity::class.java)
                 intent.putExtra(KEY1,email.toString())

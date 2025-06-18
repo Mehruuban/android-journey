@@ -47,14 +47,17 @@ class MainActivity : AppCompatActivity() {
             etId.text?.clear()
             etPassword.text?.clear()
 
-            database.child(id).setValue(user).addOnSuccessListener {
+            database.child(id).setValue(user)
+                .addOnSuccessListener {
                 Toast.makeText(this, "Registered Successfully", Toast.LENGTH_SHORT).show()
-            }.addOnSuccessListener {
-                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,LoginActivity::class.java)
+                    startActivity(intent)
+
+            }
+                .addOnSuccessListener {
+                Toast.makeText(this, " Registration Failed", Toast.LENGTH_SHORT).show()
             }
 
-            val intent = Intent(this,LoginActivity::class.java)
-            startActivity(intent)
         }
 
     }
