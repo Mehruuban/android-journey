@@ -1,5 +1,6 @@
 package com.mehru.listviews
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
@@ -36,6 +37,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         listView.adapter = MyAdapter(this,userArrayList)
+
+
+        listView.setOnItemClickListener { parent, view, position, id ->
+            val userName = name[position]
+            val userPhone = phoneNumber[position]
+            val image= imageId[position]
+
+            val i = Intent(this,SecondActivity::class.java)
+
+            i.putExtra("name", userName)
+            i.putExtra("PhoneNo",userPhone)
+            i.putExtra("image",image)
+            startActivity(i)
+        }
 
 
     }
